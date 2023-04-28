@@ -16,7 +16,7 @@ class TodayOrAfterRule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if(!$this->isDateTodayOrAfter($value)){
-            $fail('A data deve ser futura.');
+            $fail('Não é possível verificar passagens para datas retroativas.');
         }
     }
 

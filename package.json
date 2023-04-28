@@ -17,6 +17,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "vue-axios": "^3.5.2",
         "vue-tailwind-datepicker": "^1.4.3"
     }
 }

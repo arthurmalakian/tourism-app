@@ -6,8 +6,11 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueTailwindDatepicker from 'vue-tailwind-datepicker'
+import axios from 'axios'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+
+axios.defaults.baseURL = import.meta.env.API_URL;
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

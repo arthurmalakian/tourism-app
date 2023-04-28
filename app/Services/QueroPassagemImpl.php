@@ -35,7 +35,7 @@ class QueroPassagemImpl implements QueroPassagem
         ])->post(
             config("queropassagem.url") . "/new/seats",
             [
-                "travelId" => "1_3fe7f88636fb1bebc68f33deca77b738",
+                "travelId" => $id,
             ]
         );
         return $response->json();
