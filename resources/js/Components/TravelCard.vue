@@ -55,7 +55,9 @@ const checkSeats = async (seatId) => {
     </div>
     <Modal :show="openModal" @close="closeModal">
         <div class="grid grid-cols-4 gap-4 justify-center py-5 px-5">
-            <div v-for=" seat in seats" :key="seat.seat" class="p-6 bg-gray-900/50 bg-gradient-to-bl rounded-lg dark:shadow-none text-center text-bold text-lg" v-bind:class = "seat.occupied ? 'text-red-700':'text-green-900'"> Poltrona {{seat.seat}}</div>
+            <div v-for=" seat in seats" :key="seat.seat" class="p-6 bg-gray-900/50 bg-gradient-to-bl rounded-lg dark:shadow-none" v-bind:class = "seat.occupied ? 'text-red-700':'text-green-900'">
+                <div class="w-full text-center object-contain text-lg text-bold">{{seat.seat}}</div>
+            </div>
         </div>
     </Modal>
   </div>
