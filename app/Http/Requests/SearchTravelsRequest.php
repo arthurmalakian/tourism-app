@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\AvailableStopsRule;
 use App\Rules\TodayOrAfterRule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,8 +24,8 @@ class SearchTravelsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'from' => ['required'],
-            'to' => ['required'],
+            'from' => ['required', new AvailableStopsRule()],
+            'to' => ['required', new AvailableStopsRule()],
             'travelDate' => ['required', new TodayOrAfterRule()],
         ];
     }

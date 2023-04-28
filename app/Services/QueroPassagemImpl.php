@@ -50,4 +50,14 @@ class QueroPassagemImpl implements QueroPassagem
         ])->get(config("queropassagem.url") . "/stops");
         return $response->json();
     }
+
+    public function getStop($stop_code)
+    {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+            'Authorization' => "Basic " . base64_encode(config("queropassagem.user") . ":" . config("queropassagem.password"))
+        ])->get(config("queropassagem.url") . "/stops/".$stop_code);
+        return $response->json();
+    }
 }
