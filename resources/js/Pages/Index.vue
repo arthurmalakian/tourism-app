@@ -135,7 +135,7 @@ const searchTravels = () => {
                 class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
               >
                 Verifique a disponibilidade de passagens de ônibus
-                intermunicipais nos estados de São Paulo e Paraná.
+                intermunicipais.
               </p>
               <form @submit.prevent="submit" class="w-full mt-6">
                 <datalist id="cities">
