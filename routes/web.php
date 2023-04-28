@@ -19,12 +19,6 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [QueroPassagemController::class,'index'])->name('home');
-Route::post('/search', [QueroPassagemController::class,'search'])->name('search');
-
-Route::get('/test', function () {
-    $queroPassagem = new QueroPassagemImpl();
-    dd($queroPassagem->getTravels(null),$queroPassagem->getAllStops());
-    return $queroPassagem->getBus(null);
-});
+Route::post('/', [QueroPassagemController::class,'search'])->name('search');
 
 require __DIR__.'/auth.php';
